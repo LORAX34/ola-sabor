@@ -18,19 +18,19 @@ function getItems(cat: string) {
 ---
 
 <BaseLayout title="Carta — Ola & Sabor">
-  <section class="min-h-screen bg-brand-black-900 py-12">
+  <section class="min-h-screen bg-brand-black-900 py-6 sm:py-12">
     <div class="mx-auto max-w-3xl px-4">
       <!-- Carta card -->
-      <div class="relative rounded-2xl border border-brand-gold/30 bg-brand-black-800 p-8 shadow-2xl md:p-12">
+      <div class="relative rounded-2xl border border-brand-gold/30 bg-brand-black-800 p-5 shadow-2xl sm:p-8 md:p-12">
 
         <!-- Header -->
-        <div class="mb-8 text-center">
+        <div class="mb-6 text-center sm:mb-8">
           <img
             src="/logo.jpeg"
             alt="Ola & Sabor"
-            class="mx-auto mb-4 h-20 w-20 rounded-full object-cover ring-2 ring-brand-gold/30"
+            class="mx-auto mb-3 h-14 w-14 rounded-full object-cover ring-2 ring-brand-gold/30 sm:h-20 sm:w-20"
           />
-          <h1 class="font-display text-3xl font-bold text-brand-gold md:text-4xl">
+          <h1 class="font-display text-2xl font-bold text-brand-gold sm:text-3xl md:text-4xl">
             Ola & Sabor
           </h1>
           <p class="mt-1 font-display text-sm italic text-brand-gold-400">
@@ -131,45 +131,44 @@ function getItems(cat: string) {
               </div>
 
               <!-- Items -->
-              <div class="space-y-4">
+              <div class="space-y-3 sm:space-y-4">
                 {items.map((item) => (
-                  <div class="item-row flex items-start gap-3">
-                    <!-- Number -->
-                    <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-brand-gold/40 bg-brand-gold/5 text-xs font-bold text-brand-gold">
-                      {String(item.data.number).padStart(2, "0")}
-                    </span>
+                  <div class="flex items-start gap-3 sm:gap-4">
+                    <!-- Image or Number -->
+                    <div class="shrink-0">
+                      {
+                        item.data.image ? (
+                          <div class="relative h-16 w-16 overflow-hidden rounded-xl ring-1 ring-brand-gold/20 sm:h-[72px] sm:w-[72px]">
+                            <img
+                              src={item.data.image}
+                              alt={item.data.title}
+                              class="h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        ) : (
+                          <span class="mt-1 flex h-7 w-7 items-center justify-center rounded-full border border-brand-gold/40 bg-brand-gold/5 text-xs font-bold text-brand-gold">
+                            {String(item.data.number).padStart(2, "0")}
+                          </span>
+                        )
+                      }
+                    </div>
 
-                    <!-- Content area -->
-                    <div class="flex-1 min-w-0">
-                      <!-- Name + price row -->
+                    <!-- Content -->
+                    <div class="flex-1 min-w-0 pt-0.5">
                       <div class="flex items-baseline gap-2">
-                        <span class="font-name text-base font-semibold text-white truncate">
+                        <span class="font-name text-sm font-semibold text-white truncate sm:text-base">
                           {item.data.title}
                         </span>
-                        <span class="flex-1 border-b border-dashed border-brand-gold/20 min-w-[1rem]"></span>
-                        <span class="shrink-0 font-name text-base font-bold text-brand-gold">
+                        <span class="flex-1 border-b border-dashed border-brand-gold/20 min-w-[0.5rem]"></span>
+                        <span class="shrink-0 font-name text-sm font-bold text-brand-gold sm:text-base">
                           {item.data.price}
                         </span>
                       </div>
-                      <!-- Description -->
                       <p class="mt-0.5 font-desc text-xs leading-relaxed text-brand-black-300">
                         {item.data.description}
                       </p>
                     </div>
-
-                    <!-- Image thumbnail -->
-                    {
-                      item.data.image && (
-                        <div class="mt-0.5 shrink-0 hidden sm:block">
-                          <img
-                            src={item.data.image}
-                            alt={item.data.title}
-                            class="h-10 w-10 rounded-lg object-cover ring-1 ring-brand-gold/20"
-                            loading="lazy"
-                          />
-                        </div>
-                      )
-                    }
                   </div>
                 ))}
               </div>
