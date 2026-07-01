@@ -1,0 +1,220 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allItems = await getCollection("items");
+
+const categories = [
+  { key: "cafe", label: "Café" },
+  { key: "cocteleria", label: "Coctelería" },
+  { key: "platos", label: "Platos" },
+] as const;
+
+function getItems(cat: string) {
+  return allItems
+    .filter((i) => i.data.category === cat)
+    .sort((a, b) => a.data.number - b.data.number);
+}
+---
+
+<BaseLayout title="Carta — Ola & Sabor">
+  <section class="min-h-screen bg-brand-black-900 py-12">
+    <div class="mx-auto max-w-3xl px-4">
+      <!-- Carta card -->
+      <div class="relative rounded-2xl border border-brand-gold/30 bg-brand-black-800 p-8 shadow-2xl md:p-12">
+
+        <!-- Header -->
+        <div class="mb-8 text-center">
+          <img
+            src="/logo.jpeg"
+            alt="Ola & Sabor"
+            class="mx-auto mb-4 h-20 w-20 rounded-full object-cover ring-2 ring-brand-gold/30"
+          />
+          <h1 class="font-display text-3xl font-bold text-brand-gold md:text-4xl">
+            Ola & Sabor
+          </h1>
+          <p class="mt-1 font-display text-sm italic text-brand-gold-400">
+            Cocktail Bar
+          </p>
+          <div class="mx-auto mt-4 flex items-center gap-2">
+            <span class="block h-px flex-1 bg-brand-gold/30"></span>
+            <span class="text-brand-gold/60 text-xs">✦</span>
+            <span class="block h-px flex-1 bg-brand-gold/30"></span>
+          </div>
+        </div>
+
+        <!-- Category filter -->
+        <div class="mb-8 flex flex-wrap justify-center gap-2" id="filters">
+          <button
+            class="filter-btn rounded-full border border-brand-gold/40 px-5 py-2 text-xs font-medium text-brand-gold-300 transition-all hover:bg-brand-gold hover:text-brand-black"
+            data-filter="all"
+            data-active
+          >
+            Todo
+          </button>
+          {categories.map((cat) => (
+            <button
+              class="filter-btn rounded-full border border-brand-gold/40 px-5 py-2 text-xs font-medium text-brand-gold-300 transition-all hover:bg-brand-gold hover:text-brand-black"
+              data-filter={cat.key}
+            >
+              {cat.label === "Café" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="inline -mt-0.5 mr-1">
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/>
+                  <line x1="6" y1="2" x2="6" y2="4"/>
+                  <line x1="10" y1="2" x2="10" y2="4"/>
+                  <line x1="14" y1="2" x2="14" y2="4"/>
+                </svg>
+              )}
+              {cat.label === "Coctelería" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="inline -mt-0.5 mr-1">
+                  <path d="M6 2 12 12v10"/>
+                  <path d="M18 2 12 12"/>
+                  <path d="M4 2h16"/>
+                  <path d="M8 22h8"/>
+                </svg>
+              )}
+              {cat.label === "Platos" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="inline -mt-0.5 mr-1">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                  <path d="M8 6v2"/>
+                </svg>
+              )}
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        <!-- Menu sections -->
+        {categories.map((cat, idx) => {
+          const items = getItems(cat.key);
+          if (items.length === 0) return null;
+
+          return (
+            <div class="category-section" data-category={cat.key}>
+              {idx > 0 && (
+                <div class="my-8 flex items-center gap-2">
+                  <span class="block h-px flex-1 bg-brand-gold/20"></span>
+                  <span class="text-brand-gold/40 text-[10px]">✦</span>
+                  <span class="block h-px flex-1 bg-brand-gold/20"></span>
+                </div>
+              )}
+
+              <!-- Category tag -->
+              <div class="mb-6 inline-flex items-center gap-2 rounded-lg bg-brand-green/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-green-300">
+                {cat.key === "cafe" && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/>
+                    <line x1="6" y1="2" x2="6" y2="4"/>
+                    <line x1="10" y1="2" x2="10" y2="4"/>
+                    <line x1="14" y1="2" x2="14" y2="4"/>
+                  </svg>
+                )}
+                {cat.key === "cocteleria" && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2 12 12v10"/>
+                    <path d="M18 2 12 12"/>
+                    <path d="M4 2h16"/>
+                    <path d="M8 22h8"/>
+                  </svg>
+                )}
+                {cat.key === "platos" && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                    <path d="M8 6v2"/>
+                  </svg>
+                )}
+                {cat.label}
+              </div>
+
+              <!-- Items -->
+              <div class="space-y-4">
+                {items.map((item) => (
+                  <div class="item-row flex items-start gap-3">
+                    <!-- Number -->
+                    <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-brand-gold/40 bg-brand-gold/5 text-xs font-bold text-brand-gold">
+                      {String(item.data.number).padStart(2, "0")}
+                    </span>
+
+                    <!-- Content area -->
+                    <div class="flex-1 min-w-0">
+                      <!-- Name + price row -->
+                      <div class="flex items-baseline gap-2">
+                        <span class="font-name text-base font-semibold text-white truncate">
+                          {item.data.title}
+                        </span>
+                        <span class="flex-1 border-b border-dashed border-brand-gold/20 min-w-[1rem]"></span>
+                        <span class="shrink-0 font-name text-base font-bold text-brand-gold">
+                          {item.data.price}
+                        </span>
+                      </div>
+                      <!-- Description -->
+                      <p class="mt-0.5 font-desc text-xs leading-relaxed text-brand-black-300">
+                        {item.data.description}
+                      </p>
+                    </div>
+
+                    <!-- Image thumbnail -->
+                    {
+                      item.data.image && (
+                        <div class="mt-0.5 shrink-0 hidden sm:block">
+                          <img
+                            src={item.data.image}
+                            alt={item.data.title}
+                            class="h-10 w-10 rounded-lg object-cover ring-1 ring-brand-gold/20"
+                            loading="lazy"
+                          />
+                        </div>
+                      )
+                    }
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+
+        <!-- Footer -->
+        <div class="mt-10 border-t border-brand-gold/20 pt-6 text-center font-desc text-xs text-brand-black-400">
+          <p>Todos nuestros productos son elaborados al momento con ingredientes seleccionados.</p>
+        </div>
+      </div>
+
+      <!-- Back link -->
+      <div class="mt-6 text-center">
+        <a href="/" class="font-desc text-xs text-brand-black-400 transition-colors hover:text-brand-gold">
+          ← Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll(".filter-btn");
+    const sections = document.querySelectorAll(".category-section");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.dataset.filter;
+
+        buttons.forEach((b) => {
+          b.removeAttribute("data-active");
+        });
+        btn.dataset.active = "";
+
+        sections.forEach((section) => {
+          if (filter === "all") {
+            section.style.display = "block";
+          } else if (section.dataset.category === filter) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

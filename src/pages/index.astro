@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-black">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,168,76,0.06)_0%,_transparent_70%)]"></div>
+
+    <div class="relative z-10 mx-auto max-w-2xl px-6 text-center">
+      <div class="animate-fade-in mb-8 flex justify-center">
+        <img
+          src="/logo.jpeg"
+          alt="Ola & Sabor"
+          class="h-36 w-36 rounded-full object-cover ring-4 ring-brand-gold/30 shadow-2xl shadow-brand-gold/10 md:h-44 md:w-44"
+        />
+      </div>
+
+      <h1 class="animate-slide-up font-display text-5xl font-bold leading-tight text-white md:text-7xl">
+        Ola & Sabor
+      </h1>
+      <p class="animate-slide-up mt-3 font-display text-xl italic text-brand-gold-400 md:text-2xl">
+        Cocktail Bar
+      </p>
+
+      <div class="animate-fade-in mx-auto mt-6 h-px w-20 bg-brand-gold/50"></div>
+
+      <div class="animate-slide-up mt-12">
+        <a
+          href="/carta"
+          class="inline-block rounded-full border-2 border-brand-gold px-10 py-4 font-display text-lg font-semibold text-brand-gold transition-all duration-300 hover:bg-brand-gold hover:text-brand-black hover:shadow-lg hover:shadow-brand-gold/25"
+        >
+          VER CARTA
+        </a>
+      </div>
+
+      <div class="animate-fade-in mt-16 flex justify-center gap-8 text-xs text-brand-black-400">
+        <span>Café</span>
+        <span class="text-brand-gold/40">✦</span>
+        <span>Coctelería</span>
+        <span class="text-brand-gold/40">✦</span>
+        <span>Platos</span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

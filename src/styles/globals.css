@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    background-color: #C9A84C;
+    color: #1A1A1A;
+  }
+
+  body {
+    @apply antialiased bg-brand-black text-brand-black-100;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  img {
+    @apply select-none;
+  }
+}
+
+@layer components {
+  .filter-btn[data-active] {
+    @apply bg-brand-gold text-brand-black;
+  }
+}
