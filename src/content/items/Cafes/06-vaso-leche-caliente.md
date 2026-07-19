@@ -1,0 +1,9 @@
+---
+title: "Vaso de leche caliente"
+number: 6
+price: "1,50 €"
+category: "Cafés"
+description: ""
+image: "/logo.jpeg"
+---
+
