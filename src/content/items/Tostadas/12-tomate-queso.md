@@ -4,5 +4,6 @@ number: 12
 price: "4,00 €"
 category: "Tostadas"
 description: "Tostada con tomate y queso"
+active: true
 image: "/logo.jpeg"
 ---

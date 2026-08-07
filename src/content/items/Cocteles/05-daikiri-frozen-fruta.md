@@ -5,6 +5,7 @@ price: "7,00 €"
 category: "Cocteles"
 alcohol: true
 description: "Fresa - Kiwi - Plátano - Frutos rojos - Piña - Limón - Mango"
+active: true
 image: "/logo.jpeg"
 ---
 

@@ -4,5 +4,6 @@ number: 5
 price: "4,80 €"
 category: "Tostadas"
 description: "Tostada con queso crema, salmón ahumado y aguacate"
+active: true
 image: "/logo.jpeg"
 ---

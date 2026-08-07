@@ -5,5 +5,6 @@ price: "4,00 €"
 category: "Yogures-Granolas-Bowls"
 subcategory: Bowls
 description: "Bowl con cuatro frutas de temporada"
+active: true
 image: "/logo.jpeg"
 ---

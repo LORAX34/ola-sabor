@@ -22,6 +22,7 @@ const items = defineCollection({
     alcohol: z.boolean().optional(),
     description: z.string(),
     image: z.string().optional(),
+    active: z.boolean().optional(),
   }),
 });
 

@@ -5,5 +5,6 @@ price: "5,00 €"
 category: "Tortitas"
 subcategory: Dulces
 description: "Helado con Nutella, Oreo, Kinder Bueno, Lotus y pistacho"
+active: true
 image: "/logo.jpeg"
 ---

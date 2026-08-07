@@ -5,5 +5,6 @@ price: "4,80 €"
 category: "Tortitas"
 subcategory: Saladas
 description: "Tortitas saladas con huevo revuelto y jamón serrano"
+active: true
 image: "/logo.jpeg"
 ---

@@ -5,6 +5,7 @@ price: "3,00 €"
 category: "Batidos-Zumos"
 subcategory: Zumos
 description: "Zumo natural de naranja y fresa"
+active: true
 image: "/logo.jpeg"
 ---
 

@@ -5,5 +5,6 @@ price: "3,20 €"
 category: "Tortitas"
 subcategory: Dulces
 description: "Tortitas dulces con miel"
+active: true
 image: "/logo.jpeg"
 ---

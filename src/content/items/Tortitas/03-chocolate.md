@@ -5,5 +5,6 @@ price: "3,50 €"
 category: "Tortitas"
 subcategory: Dulces
 description: "Tortitas dulces con chocolate"
+active: true
 image: "/logo.jpeg"
 ---

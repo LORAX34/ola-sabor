@@ -5,5 +5,6 @@ price: "3,50 €"
 category: "Croissants"
 subcategory: Salados
 description: "Croissant con jamón York"
+active: true
 image: "/logo.jpeg"
 ---

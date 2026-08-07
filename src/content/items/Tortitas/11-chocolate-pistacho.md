@@ -5,5 +5,6 @@ price: "4,50 €"
 category: "Tortitas"
 subcategory: Dulces
 description: "Tortitas dulces con chocolate y pistacho"
+active: true
 image: "/logo.jpeg"
 ---

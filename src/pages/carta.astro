@@ -19,7 +19,7 @@ const categories = [
 
 function getItems(cat: string) {
   return allItems
-    .filter((i) => i.data.category === cat)
+    .filter((i) => i.data.category === cat && i.data.active !== false)
     .sort((a, b) => a.data.number - b.data.number);
 }
 

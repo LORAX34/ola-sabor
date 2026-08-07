@@ -5,5 +5,6 @@ price: "3,00 €"
 category: "Tortitas"
 subcategory: Dulces
 description: "Tortitas dulces con azúcar glas"
+active: true
 image: "/logo.jpeg"
 ---

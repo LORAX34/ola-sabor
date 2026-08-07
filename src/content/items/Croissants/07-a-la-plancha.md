@@ -5,5 +5,6 @@ price: "1,80 €"
 category: "Croissants"
 subcategory: Dulces
 description: "Croissant tostado a la plancha"
+active: true
 image: "/logo.jpeg"
 ---
