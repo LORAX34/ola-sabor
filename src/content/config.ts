@@ -6,7 +6,20 @@ const items = defineCollection({
     title: z.string(),
     number: z.number(),
     price: z.string(),
-    category: z.enum(["cafe", "cocteleria", "platos"]),
+    category: z.enum([
+      "Cafés",
+      "Cocteles",
+      "Batidos-Zumos",
+      "Tortitas",
+      "Tostadas",
+      "Sandwiches",
+      "Croissants",
+      "Yogures-Granolas-Bowls",
+    ]),
+    subcategory: z
+      .enum(["Batidos", "Zumos", "Dulces", "Saladas", "Salados", "Yogures", "Bowls", "Granolas"])
+      .optional(),
+    alcohol: z.boolean().optional(),
     description: z.string(),
     image: z.string().optional(),
   }),

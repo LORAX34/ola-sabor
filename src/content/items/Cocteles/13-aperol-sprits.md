@@ -1,5 +1,5 @@
 ---
-title: "Aperol Sprits"
+title: "Aperol Spritz"
 number: 13
 price: "5,50 €"
 category: "Cocteles"

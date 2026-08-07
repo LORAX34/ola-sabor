@@ -1,5 +1,5 @@
 ---
-title: "Naranja-Fresa"
+title: "Naranja y fresa"
 number: 2
 price: "3,00 €"
 category: "Batidos-Zumos"

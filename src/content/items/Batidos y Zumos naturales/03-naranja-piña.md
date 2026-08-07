@@ -1,5 +1,5 @@
 ---
-title: "Naranja-Piña"
+title: "Naranja y piña"
 number: 3
 price: "3,00 €"
 category: "Batidos-Zumos"

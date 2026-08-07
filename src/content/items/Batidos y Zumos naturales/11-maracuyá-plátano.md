@@ -1,5 +1,5 @@
 ---
-title: "Maracuyá-Plátano"
+title: "Maracuyá y plátano"
 number: 4
 price: "4,00 €"
 category: "Batidos-Zumos"

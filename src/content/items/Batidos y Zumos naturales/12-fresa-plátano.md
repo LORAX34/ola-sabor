@@ -1,5 +1,5 @@
 ---
-title: "Fresa-Plátano"
+title: "Fresa y plátano"
 number: 5
 price: "4,00 €"
 category: "Batidos-Zumos"

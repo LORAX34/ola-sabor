@@ -1,9 +1,9 @@
 ---
-title: "Con leche grande"
+title: "Café con leche (grande)"
 number: 5
 price: "1,70 €"
 category: "Cafés"
-description: "Café expreso con más leche caliente"
+description: "Café expreso con leche caliente"
 image: "/logo.jpeg"
 ---
 

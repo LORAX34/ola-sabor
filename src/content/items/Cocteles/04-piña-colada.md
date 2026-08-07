@@ -1,5 +1,5 @@
 ---
-title: "Piña colada"
+title: "Piña Colada"
 number: 4
 price: "7,00 €"
 category: "Cocteles"

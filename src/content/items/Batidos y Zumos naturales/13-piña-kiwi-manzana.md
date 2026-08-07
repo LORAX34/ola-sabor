@@ -1,5 +1,5 @@
 ---
-title: "Piña-Kiwi-Manzana"
+title: "Piña, kiwi y manzana"
 number: 6
 price: "4,00 €"
 category: "Batidos-Zumos"

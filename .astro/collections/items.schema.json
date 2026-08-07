@@ -16,10 +16,31 @@
         "category": {
           "type": "string",
           "enum": [
-            "cafe",
-            "cocteleria",
-            "platos"
+            "Cafés",
+            "Cocteles",
+            "Batidos-Zumos",
+            "Tortitas",
+            "Tostadas",
+            "Sandwiches",
+            "Croissants",
+            "Yogures-Granolas-Bowls"
           ]
+        },
+        "subcategory": {
+          "type": "string",
+          "enum": [
+            "Batidos",
+            "Zumos",
+            "Dulces",
+            "Saladas",
+            "Salados",
+            "Yogures",
+            "Bowls",
+            "Granolas"
+          ]
+        },
+        "alcohol": {
+          "type": "boolean"
         },
         "description": {
           "type": "string"

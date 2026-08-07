@@ -1,5 +1,5 @@
 ---
-title: "Chocolate mix"
+title: "Chocolate Mix"
 number: 9
 price: "2,50 €"
 category: "Cafés"

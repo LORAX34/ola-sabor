@@ -1,5 +1,5 @@
 ---
-title: "Irlandés"
+title: "Café irlandés"
 number: 15
 price: "3,50 €"
 category: "Cafés"

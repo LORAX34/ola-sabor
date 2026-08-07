@@ -1,5 +1,5 @@
 ---
-title: "Naranja-Mango"
+title: "Naranja y mango"
 number: 7
 price: "3,80 €"
 category: "Batidos-Zumos"

@@ -1,5 +1,5 @@
 ---
-title: "Naranja-Frutos Rojos"
+title: "Naranja y frutos rojos"
 number: 6
 price: "3,80 €"
 category: "Batidos-Zumos"

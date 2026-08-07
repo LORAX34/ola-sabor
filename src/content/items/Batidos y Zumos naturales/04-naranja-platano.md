@@ -1,5 +1,5 @@
 ---
-title: "Naranja-Plátano"
+title: "Naranja y plátano"
 number: 4
 price: "3,00 €"
 category: "Batidos-Zumos"

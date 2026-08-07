@@ -1,5 +1,5 @@
 ---
-title: "Sangria"
+title: "Sangría"
 number: 18
 price: "12,00 €"
 category: "Cocteles"
