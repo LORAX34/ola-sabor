@@ -1,7 +1,7 @@
 ---
 title: "Sangría"
 number: 17
-price: "4,00 €"
+price: "5,00 €"
 category: "Cocteles"
 alcohol: true
 description: "copa"

@@ -1,7 +1,7 @@
 ---
 title: "Negroni"
 number: 7
-price: "6,00 €"
+price: "6,50 €"
 category: "Cocteles"
 alcohol: true
 description: ""

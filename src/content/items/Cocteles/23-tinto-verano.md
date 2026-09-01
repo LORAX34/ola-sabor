@@ -1,7 +1,7 @@
 ---
-title: "Caipiroska"
-number: 11
-price: "6,50 €"
+title: "Tinto Verano"
+number: 23
+price: "3,00 €"
 category: "Cocteles"
 alcohol: true
 description: ""

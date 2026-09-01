@@ -1,7 +1,7 @@
 ---
 title: "Naranja y plátano"
 number: 4
-price: "3,00 €"
+price: "4,00 €"
 category: "Batidos-Zumos"
 subcategory: Zumos
 description: "Zumo natural de naranja y plátano"
