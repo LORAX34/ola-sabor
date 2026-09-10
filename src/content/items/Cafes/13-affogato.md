@@ -1,10 +1,9 @@
 ---
 title: "Affogato"
 number: 13
-price: "3,80 €"
+price: "4,00 €"
 category: "Cafés"
 description: "Helado de vainilla con café expreso"
 active: true
 image: "/logo.jpeg"
 ---
-
