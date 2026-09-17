@@ -1,7 +1,7 @@
 ---
 title: "Chocolate, fresa y plátano (especial)"
 number: 9
-price: "3,80 €"
+price: "4,00 €"
 category: "Croissants"
 subcategory: Dulces
 description: "Croissant especial con chocolate, fresa y plátano"

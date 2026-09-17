@@ -1,7 +1,7 @@
 ---
 title: "Dulce de leche, fresa y plátano (especial)"
 number: 10
-price: "3,90 €"
+price: "4,00 €"
 category: "Croissants"
 subcategory: Dulces
 description: "Croissant especial con dulce de leche, fresa y plátano"

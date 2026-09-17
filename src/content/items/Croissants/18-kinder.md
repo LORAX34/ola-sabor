@@ -1,10 +1,10 @@
 ---
-title: "Crema de pistacho"
-number: 6
+title: "Croissant Kinder"
+number: 18
 price: "4,00 €"
 category: "Croissants"
 subcategory: Dulces
-description: "Croissant relleno de crema de pistacho"
+description: ""
 active: true
 image: "/logo.jpeg"
 ---
