@@ -1,7 +1,7 @@
 ---
 title: "Jamón y huevo revuelto"
 number: 23
-price: "3,80 €"
+price: "4,00 €"
 category: "Tostadas"
 description: "Tostada con jamón y huevo revuelto"
 active: true
