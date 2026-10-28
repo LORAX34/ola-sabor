@@ -2,10 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------------------------------------------------ */
+/* Paletas de temporada                                                */
+/* (fuera de @layer: Tailwind no debe purgar estos selectores)         */
+/* ------------------------------------------------------------------ */
+
+:root {
+  /* Paleta por defecto: dorado + verde oliva de la marca */
+  --accent: 201 168 76;
+  --accent-300: 227 196 90;
+  --accent-400: 212 175 55;
+  --accent-2: 74 124 63;
+  --accent-2-300: 141 186 125;
+  --accent-2-400: 107 163 84;
+}
+
+/* Temporada Halloween: calabaza, brasa y morado */
+.theme-halloween {
+  --accent: 232 121 43;
+  --accent-300: 255 168 82;
+  --accent-400: 255 197 120;
+  --accent-2: 143 191 74;
+  --accent-2-300: 190 220 130;
+  --accent-2-400: 160 205 90;
+}
+
+/* Temporada Navidad: rojo y verde (decoración pendiente) */
+.theme-navidad {
+  --accent: 214 61 61;
+  --accent-300: 240 120 120;
+  --accent-400: 245 158 158;
+  --accent-2: 38 122 74;
+  --accent-2-300: 120 200 150;
+  --accent-2-400: 90 175 125;
+}
+
 @layer base {
   ::selection {
-    background-color: #C9A84C;
-    color: #1A1A1A;
+    background-color: rgb(var(--accent));
+    color: #1a1a1a;
   }
 
   body {
@@ -24,5 +59,133 @@
 @layer components {
   .filter-btn[data-active] {
     @apply bg-brand-gold text-brand-black;
+  }
+
+  /* Etiqueta de categoría de la carta */
+  .theme-halloween .category-tag {
+    background-color: rgb(91 42 110 / 0.28);
+    color: #dcb9ec;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Decoración de temporada (Halloween)                                 */
+/* ------------------------------------------------------------------ */
+
+.hh-web {
+  color: rgb(var(--accent));
+  opacity: 0.16;
+}
+
+.hh-glow {
+  animation: hh-flicker 4.5s ease-in-out infinite;
+}
+
+@keyframes hh-flicker {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  32% {
+    opacity: 0.26;
+    transform: scale(1.04);
+  }
+  55% {
+    opacity: 0.62;
+    transform: scale(0.98);
+  }
+  72% {
+    opacity: 0.34;
+    transform: scale(1.02);
+  }
+}
+
+.hh-float {
+  animation: hh-float 7s ease-in-out infinite;
+}
+
+@keyframes hh-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+.hh-bat {
+  position: absolute;
+  left: 0;
+  top: var(--hh-top, 22%);
+  width: var(--hh-size, 28px);
+  height: auto;
+  color: rgb(var(--accent));
+  opacity: 0;
+  animation: hh-fly var(--hh-duration, 26s) linear infinite;
+  animation-delay: var(--hh-delay, 0s);
+}
+
+@keyframes hh-fly {
+  0% {
+    transform: translate3d(-15vw, 0, 0) rotate(-8deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate3d(50vw, -26px, 0) rotate(6deg);
+    opacity: 0.45;
+  }
+  92% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(115vw, 0, 0) rotate(-8deg);
+    opacity: 0;
+  }
+}
+
+.hh-fog {
+  animation: hh-drift 42s ease-in-out infinite alternate;
+}
+
+@keyframes hh-drift {
+  from {
+    transform: translateX(-5%) scale(1.05);
+  }
+  to {
+    transform: translateX(5%) scale(1.1);
+  }
+}
+
+.hh-spider {
+  animation: hh-dangle 6s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes hh-dangle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hh-glow,
+  .hh-float,
+  .hh-bat,
+  .hh-fog,
+  .hh-spider {
+    animation: none !important;
+  }
+
+  .hh-bat {
+    opacity: 0.3;
   }
 }

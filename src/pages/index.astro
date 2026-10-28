@@ -1,17 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HalloweenDecor from "../components/HalloweenDecor.astro";
+import { halloween } from "../lib/season";
 ---
 
 <BaseLayout>
   <section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-black">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,168,76,0.06)_0%,_transparent_70%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgb(var(--accent)/0.07)_0%,_transparent_70%)]"></div>
+
+    <HalloweenDecor variant="hero" />
 
     <div class="relative z-10 mx-auto max-w-2xl px-6 text-center">
-      <div class="animate-zoom-in mb-8 flex justify-center animate-duration-700">
+      <div class="animate-zoom-in relative mb-8 flex justify-center animate-duration-700">
+        {halloween && (
+          <div class="hh-glow pointer-events-none absolute inset-0 m-auto h-64 w-64 rounded-full bg-[radial-gradient(circle,_rgba(232,121,43,0.38),_transparent_68%)] blur-2xl md:h-80 md:w-80" />
+        )}
         <img
           src="/logo.jpeg"
           alt="Ola & Sabor"
-          class="h-36 w-36 rounded-full object-cover ring-4 ring-brand-gold/30 shadow-2xl shadow-brand-gold/10 md:h-44 md:w-44"
+          class="relative h-36 w-36 rounded-full object-cover ring-4 ring-brand-gold/30 shadow-2xl shadow-brand-gold/10 md:h-44 md:w-44"
         />
       </div>
 
@@ -21,6 +28,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="animate-fade-in-up font-display animate-delay-400 mt-3 text-xl italic text-brand-gold-400 md:text-2xl">
         Cocktail Bar
       </p>
+
+      {halloween && (
+        <p class="animate-fade-in-up animate-delay-500 mt-5 inline-flex items-center gap-2 rounded-full border border-brand-gold/40 bg-brand-gold/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-brand-gold-300 sm:text-[11px]">
+          <span aria-hidden="true">🎃</span>
+          Noche de Halloween
+        </p>
+      )}
 
       <div class="animate-expand-horizontally mx-auto animate-delay-500 mt-6 h-px w-20 bg-brand-gold/50"></div>
 
